@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">com.us517.today</string>
+    <string name="main_nav_home">首页</string>
+    <string name="main_nav_grocery">生活物品</string>
+    <string name="main_nav_order">订单</string>
+    <string name="main_nav_account">账户</string>
+
+    <string name="account">账户</string>
+</resources>

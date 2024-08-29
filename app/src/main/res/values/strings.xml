@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">com.us517.today</string>
+    <string name="main_nav_home">Home</string>
+    <string name="main_nav_grocery">Grocery</string>
+    <string name="main_nav_order">Orders</string>
+    <string name="main_nav_account">Account</string>
+
+    <string name="account">Account</string>
+</resources>

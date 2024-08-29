@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/main_nav_home">
+
+    <fragment
+        android:id="@+id/main_nav_home"
+        android:name="com.us517.today.ui.home.HomeFragment"
+        android:label="@string/main_nav_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/main_nav_grocery"
+        android:name="com.us517.today.ui.grocery.GroceryFragment"
+        android:label="@string/main_nav_grocery"
+        tools:layout="@layout/fragment_grocery" />
+
+    <fragment
+        android:id="@+id/main_nav_order"
+        android:name="com.us517.today.ui.order.OrderFragment"
+        android:label="@string/main_nav_order"
+        tools:layout="@layout/fragment_order" />
+
+    <fragment
+        android:id="@+id/main_nav_account"
+        android:name="com.us517.today.ui.account.AccountFragment"
+        android:label="@string/main_nav_account"
+        tools:layout="@layout/fragment_order" />
+</navigation>
