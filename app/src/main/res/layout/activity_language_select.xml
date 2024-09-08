@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LanguageSelectActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent">
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/title_bar_height"
+                android:id="@+id/title_bar_back"
+                android:layout_alignParentTop="true"
+                android:name="com.us517.today.ui.titleBar.TitleBarFragment"
+                tools:layout="@layout/fragment_title_bar">
+            </fragment>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textSize="23sp"
+                android:textColor="@color/black"
+                android:text="@string/language_select_title"
+                />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="#000000" />
+        <RadioGroup android:id="@+id/language_select_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/language_select_english"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:animateLayoutChanges="false"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:background="@android:color/transparent"
+                android:textSize="23sp"
+                android:buttonTint="@color/black"
+                android:text="@string/language_select_english"/>
+            <RadioButton android:id="@+id/language_select_chinese"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:animateLayoutChanges="false"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:textSize="23sp"
+                android:buttonTint="@color/black"
+                android:background="@android:color/transparent"
+                android:text="@string/language_select_chinese"/>
+        </RadioGroup>
+        <!-- Divider -->
+        <View
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"/>
+        <android.widget.Button
+            android:id="@+id/language_select_confirm"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:background="@drawable/button_outline_selector"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:text="@string/language_select_confirm" />
+        <View
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

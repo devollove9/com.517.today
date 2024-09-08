@@ -1,9 +1,44 @@
 <resources>
     <string name="app_name">com.us517.today</string>
+
+    <string name="loading">Loading...</string>
+
     <string name="main_nav_home">Home</string>
     <string name="main_nav_grocery">Grocery</string>
     <string name="main_nav_order">Orders</string>
     <string name="main_nav_account">Account</string>
 
+
     <string name="account">Account</string>
+    <string name="account_payment">Payment</string>
+    <string name="account_address">Address</string>
+    <string name="account_contact">Contact us</string>
+    <string name="account_language">Language</string>
+    <string name="account_setting">Settings</string>
+    <string name="account_setting_legal">Legal</string>
+
+    <string name="payment_manage_title">Payment</string>
+
+
+    <string name="address_manage_title">Address</string>
+
+
+    <string name="language_select_title">Choose Language</string>
+    <string name="language_select_confirm">Confirm</string>
+
+    <string name="language_select_english" translatable="false">English</string>
+    <string name="language_select_chinese" translatable="false">简体中文</string>
+
+    <string name="contact_title">Contact</string>
+
+
+    <string name="setting_title">Setting</string>
+
+
+    <string name="Legal_title">Legal</string>
+
+    <!-- version check -->
+    <string name="download_newest_ver">Please download the newest version from google play</string>
+    <string name="market_uri" translatable="false">market://details?id=%1$s</string>
+    <string name="web_uri" translatable="false">https://play.google.com/store/apps/details?id=%1$s</string>
 </resources>

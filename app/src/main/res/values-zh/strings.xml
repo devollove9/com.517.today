@@ -1,9 +1,37 @@
 <resources>
     <string name="app_name">com.us517.today</string>
+
+    <string name="loading">加载中...</string>
+
     <string name="main_nav_home">首页</string>
     <string name="main_nav_grocery">生活物品</string>
     <string name="main_nav_order">订单</string>
     <string name="main_nav_account">账户</string>
 
     <string name="account">账户</string>
+    <string name="account_payment">支付/信用卡</string>
+    <string name="account_address">地址管理</string>
+    <string name="account_language">选择语言</string>
+    <string name="account_contact">联系我们</string>
+    <string name="account_setting">设置</string>
+    <string name="account_setting_legal">法律信息</string>
+
+    <string name="payment_manage_title">支付管理</string>
+
+
+    <string name="address_manage_title">地址管理</string>
+
+
+    <string name="language_select_title">选择语言</string>
+    <string name="language_select_confirm">确认选择</string>
+
+    <string name="contact_title">联系我们</string>
+
+
+    <string name="setting_title">设置</string>
+
+
+    <string name="Legal_title">法律信息</string>
+    <!-- version check -->
+    <string name="download_newest_ver">请去应用商店下载最新版App</string>
 </resources>
