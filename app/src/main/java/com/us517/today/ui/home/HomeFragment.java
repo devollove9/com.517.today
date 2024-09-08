@@ -18,6 +18,8 @@ import com.us517.today.model.DataModels;
 import com.us517.today.model.Region;
 import com.us517.today.restfulApi.PublicRegion;
 
+import java.util.Locale;
+
 import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
@@ -35,6 +37,10 @@ public class HomeFragment extends Fragment {
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         HttpService ht = HttpService.getInstance(this.getContext());
+
+        Locale current = this.getContext().getResources().getConfiguration().getLocales().get(0);
+
+        Log.d("asdasdasdasdasda",current.getLanguage());
         //PublicRegion publicRegionService = HttpService.create(PublicRegion.class);
 
         ht.getPublicRegions( new WrappedCallback<DataModels<Region>>() {

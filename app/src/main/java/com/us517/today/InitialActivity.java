@@ -24,7 +24,7 @@ public class InitialActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.i("LOG_MESSAGE_20", "");
         // Set Logo Vieww
         setContentView(R.layout.activity_initial);
 

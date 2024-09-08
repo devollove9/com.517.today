@@ -1,11 +1,18 @@
 package com.us517.today;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.LocaleList;
 import android.util.DisplayMetrics;
 import android.util.Log;
+
+
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.os.LocaleListCompat;
 
 import java.util.Locale;
 
@@ -16,14 +23,11 @@ import java.util.Locale;
 public class TodayApplication extends Application {
     // Shared preferences
     private SharedPreferences sharedPreferences;
-
+    private SharedPreferences.Editor sharedPreferencesEditor;
     // Locales
-    public static String ENGLISH = "en";
-    public static String CHAINESE = "cn";
-    public static String LANGUAGE;
-    public final static int LANGUAGE_ENGLISH = 9;
-    public final static int LANGUAGE_CHINESE = 8;
-    private final static String LANGUAGE_TEXT = "language";
+    public final static String LANGUAGE_ENGLISH = "en";
+    public final static String LANGUAGE_CHINESE = "zh";
+    private final static String LANGUAGE_TEXT = "LANGUAGE";
 
     // Region
     private String regionId;
@@ -50,27 +54,17 @@ public class TodayApplication extends Application {
         super.onCreate();
 
         sharedPreferences = getSharedPreferences(SETTING, MODE_PRIVATE);
+        sharedPreferencesEditor = sharedPreferences.edit();
 
-        Resources resource = getResources();
-        Configuration config = resource.getConfiguration();
-        int language;
-        if (sharedPreferences.getInt(LANGUAGE_TEXT, LANGUAGE_CHINESE) == LANGUAGE_CHINESE) {
-            config.setLocale(Locale.CHINESE);
-            language = LANGUAGE_CHINESE;
-        } else {
-            config.setLocale(Locale.ENGLISH);
-            language = LANGUAGE_ENGLISH;
-        }
+        // Detect if user has saved language. if yes set as saved language
+        String savedL = sharedPreferences.getString(LANGUAGE_TEXT, LANGUAGE_ENGLISH);
+        setLanguage(savedL);
 
         this.regionId = sharedPreferences.getString(REGION, "");
         regionName = sharedPreferences.getString(REGION_NAME, null);
         regionNameEn = sharedPreferences.getString(REGION_NAME_EN, null);
-        sharedPreferences.edit().putInt(LANGUAGE_TEXT, language).commit();
+        //sharedPreferences.edit().putInt(LANGUAGE_TEXT, language).commit();
 
-        int a = sharedPreferences.getInt(LANGUAGE_TEXT, LANGUAGE_CHINESE);
-
-        Log.i("LOG_MESSAGE", String.valueOf(a));
-        //getResources().updateConfiguration(config, dm);
     }
 
     private int time = 0;
@@ -84,18 +78,12 @@ public class TodayApplication extends Application {
         this.time = time;
     }
 
-    @SuppressWarnings("deprecation")
-    public void setLanguage(int language) {
-        Resources res = getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration config = res.getConfiguration();
-        if (language == LANGUAGE_ENGLISH) {
-            config.setLocale(Locale.ENGLISH);
-        } else {
-            config.setLocale(Locale.CHINESE);
-        }
-        res.updateConfiguration(config, dm);
-        LANGUAGE = config.locale.getLanguage();
-        sharedPreferences.edit().putInt(LANGUAGE_TEXT, language).commit();
+    public void setLanguage(String language) {
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(Locale.forLanguageTag(language)));
+        sharedPreferencesEditor.putString(LANGUAGE_TEXT, language);
+    }
+
+    public String getLanguage() {
+       return AppCompatDelegate.getApplicationLocales().toString();
     }
 }
