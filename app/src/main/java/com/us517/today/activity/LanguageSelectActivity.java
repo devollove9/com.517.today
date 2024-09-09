@@ -49,7 +49,6 @@ public class LanguageSelectActivity extends BaseActivity implements View.OnClick
         final String seLang = sL;
 
         if (!curLang.equals(seLang.toString()) ) {
-            Log.d(curLang,seLang);
             Dialog.showYesNoDialog(LanguageSelectActivity.this, 0, null, getString(R.string.language_select_confirm_selection), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

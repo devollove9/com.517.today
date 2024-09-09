@@ -44,19 +44,20 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // AccountViewModel accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        NavController navController = Navigation.findNavController(this.getActivity(), R.id.nav_host_fragment_activity_main);
-        launcher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if(result.getResultCode() == Activity.RESULT_OK) {
-                        navController.navigate(R.id.main_nav_account);
-                    }
-                }
-            });
+
         TodayApplication tApp = (TodayApplication) getActivity().getApplication();
         View root;
         if (!tApp.isSignedIn()) {
+            NavController navController = Navigation.findNavController(this.getActivity(), R.id.nav_host_fragment_activity_main);
+            launcher = registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                        @Override
+                        public void onActivityResult(ActivityResult result) {
+                            if(result.getResultCode() == Activity.RESULT_OK) {
+                                navController.navigate(R.id.main_nav_account);
+                            }
+                        }
+                    });
             binding2 = FragmentRequestSignInBinding.inflate(inflater,container, false);
             root = binding2.getRoot();
             binding2.requestSignIn.setOnClickListener(this);
