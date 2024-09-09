@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_height"
+    tools:context="com.us517.today.ui.titleBar.TitleBarClose">
+    <ImageButton
+        android:id="@+id/title_close"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingStart="10dp"
+        android:background="@null"
+        android:src="@drawable/title_close_24"
+        android:visibility="visible" />
+</RelativeLayout>

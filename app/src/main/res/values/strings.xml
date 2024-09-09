@@ -3,6 +3,10 @@
 
     <string name="loading">Loading...</string>
 
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="signin">Sign In</string>
+
     <string name="main_nav_home">Home</string>
     <string name="main_nav_grocery">Grocery</string>
     <string name="main_nav_order">Orders</string>
@@ -10,10 +14,12 @@
 
 
     <string name="account">Account</string>
-    <string name="account_payment">Payment</string>
     <string name="account_address">Address</string>
     <string name="account_contact">Contact us</string>
+    <string name="account_credit">Credit</string>
+    <string name="account_favorite">Favorite</string>
     <string name="account_language">Language</string>
+    <string name="account_payment">Payment</string>
     <string name="account_setting">Settings</string>
     <string name="account_setting_legal">Legal</string>
 
@@ -22,19 +28,23 @@
 
     <string name="address_manage_title">Address</string>
 
+    <string name="contact_title">Contact</string>
+
+
+
+
+    <string name="credit_title">Credit</string>
+
+    <string name="favorite_title">Favorite List</string>
 
     <string name="language_select_title">Choose Language</string>
     <string name="language_select_confirm">Confirm</string>
+    <string name="language_select_confirm_selection">Confirm change language?</string>
 
     <string name="language_select_english" translatable="false">English</string>
     <string name="language_select_chinese" translatable="false">简体中文</string>
 
-    <string name="contact_title">Contact</string>
-
-
     <string name="setting_title">Setting</string>
-
-
     <string name="Legal_title">Legal</string>
 
     <!-- version check -->

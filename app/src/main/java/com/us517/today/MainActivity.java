@@ -1,5 +1,6 @@
 package com.us517.today;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,9 +31,17 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+
     public void tryingClick(){
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.show();
         Log.d("myTag", "This is my message");
+    }
+
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        Log.d("starting","startingstartingstartingstartingstartingstartingstarting");
+        overridePendingTransition(R.anim.anim_right_in, R.anim.anim_left_out);
     }
 }

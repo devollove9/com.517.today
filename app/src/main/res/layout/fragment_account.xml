@@ -7,119 +7,135 @@
     android:layout_height="match_parent"
     tools:context=".ui.account.AccountFragment">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/main_account1"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/account"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="#000000" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="@string/account"
-                tools:ignore="MissingConstraints" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                android:background="#000000" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/main_account1"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:clickable="true"
-                android:orientation="horizontal">
-
-                <TextView
+                android:orientation="vertical">
+                <RelativeLayout
                     android:id="@+id/account_credit"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="credit" />
+                    style="@style/account_menuItem"
+                    android:layout_height="80dp">
 
-                <TextView
-                    android:id="@+id/account_orderHistory"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Order History" />
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_credit_24"
+                        android:text="@string/account_credit" />
 
-                <TextView
+                    <TextView
+                        android:id="@+id/account_credit_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="20dp"
+                        android:text="$0.0"
+                        android:textSize="23sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_payment"
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_credit_card_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_payment" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_address"
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_address_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_address" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:id="@+id/account_favorate"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Favorate" />
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_favorite_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_favorite" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_language"
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_language_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_language" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_setting"
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_setting_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_setting" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_contact"
+                    style="@style/account_menuItem">
+
+                    <TextView
+                        style="@style/account_menuItem_view"
+                        android:drawableStart="@drawable/account_contact_24"
+                        android:drawableEnd="@drawable/arrow_right_24"
+                        android:text="@string/account_contact" />
+                </RelativeLayout>
             </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/account_payment"
-                style="@style/account_menuItem">
-
-                <TextView
-                    style="@style/account_menuItem_view"
-                    android:drawableStart="@drawable/account_credit_card_24"
-                    android:drawableEnd="@drawable/arrow_right_24"
-                    android:text="@string/account_payment" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/account_address"
-                style="@style/account_menuItem">
-
-                <TextView
-                    style="@style/account_menuItem_view"
-                    android:drawableStart="@drawable/account_address_24"
-                    android:drawableEnd="@drawable/arrow_right_24"
-                    android:text="@string/account_address" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/account_language"
-                style="@style/account_menuItem">
-
-                <TextView
-                    style="@style/account_menuItem_view"
-                    android:drawableStart="@drawable/account_language_24"
-                    android:drawableEnd="@drawable/arrow_right_24"
-                    android:text="@string/account_language" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/account_setting"
-                style="@style/account_menuItem">
-
-                <TextView
-                    style="@style/account_menuItem_view"
-                    android:drawableStart="@drawable/account_setting_24"
-                    android:drawableEnd="@drawable/arrow_right_24"
-                    android:text="@string/account_setting" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/account_contact"
-                style="@style/account_menuItem">
-
-                <TextView
-                    style="@style/account_menuItem_view"
-                    android:drawableStart="@drawable/account_contact_24"
-                    android:drawableEnd="@drawable/arrow_right_24"
-                    android:text="@string/account_contact" />
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,31 +17,32 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);/*
+        Log.d("starting","startingstartingstartingstartingstartingstartingstarting");
         final OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                Log.d("asd","asdasdasdasd");
+                Log.d("starting","startingstartingstartingstartingstartingstartingstarting");
                 finish();
                 setEnabled(false); //this is important line
-                onBackPressed();
+                //onBackPressed();
             }
         };
 
-        getOnBackPressedDispatcher().addCallback(this, callback);
+        getOnBackPressedDispatcher().addCallback(this, callback);*/
     }
 
     @Override
     public void startActivity(Intent intent) {
         super.startActivity(intent);
-
-        overridePendingTransition(R.anim.anim_right_in, R.anim.anim_left_out);
+        //Log.d("starting","startingstartingstartingstartingstartingstartingstarting");
+        //overridePendingTransition(R.anim.anim_right_in, R.anim.anim_left_out);
     }
 
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.anim_left_in, R.anim.anim_rignt_out);
+        // overridePendingTransition(R.anim.anim_left_in, R.anim.anim_rignt_out);
     }
     /*
     @Override

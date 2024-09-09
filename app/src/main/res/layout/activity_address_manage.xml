@@ -10,8 +10,8 @@
         android:layout_height="@dimen/title_bar_height"
         android:id="@+id/title_bar_back"
         android:layout_alignParentTop="true"
-        android:name="com.us517.today.ui.titleBar.TitleBarFragment"
-        tools:layout="@layout/fragment_title_bar">
+        android:name="com.us517.today.ui.titleBar.TitleBarBack"
+        tools:layout="@layout/fragment_title_bar_back">
     </fragment>
 
     <TextView
@@ -22,8 +22,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Language Select"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/address_manage_title"
         />
 
 </RelativeLayout>

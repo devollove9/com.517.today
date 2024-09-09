@@ -58,6 +58,7 @@ public class TodayApplication extends Application {
 
         // Detect if user has saved language. if yes set as saved language
         String savedL = sharedPreferences.getString(LANGUAGE_TEXT, LANGUAGE_ENGLISH);
+        Log.d(savedL,savedL);
         setLanguage(savedL);
 
         this.regionId = sharedPreferences.getString(REGION, "");
@@ -69,6 +70,13 @@ public class TodayApplication extends Application {
 
     private int time = 0;
 
+    public boolean isSignedIn() {
+        return isSignedIn;
+    }
+
+    public void setSignIn(boolean isSignedIn) {
+        this.isSignedIn = isSignedIn;
+    }
 
     public int getTime() {
         return time;
@@ -80,10 +88,11 @@ public class TodayApplication extends Application {
 
     public void setLanguage(String language) {
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(Locale.forLanguageTag(language)));
-        sharedPreferencesEditor.putString(LANGUAGE_TEXT, language);
+        sharedPreferencesEditor.putString(LANGUAGE_TEXT, language).apply();
     }
 
     public String getLanguage() {
-       return AppCompatDelegate.getApplicationLocales().toString();
+       // return AppCompatDelegate.getApplicationLocales().toString();
+        return sharedPreferences.getString(LANGUAGE_TEXT, LANGUAGE_ENGLISH);
     }
 }

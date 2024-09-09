@@ -4,16 +4,23 @@
 
     <string name="loading">加载中...</string>
 
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="signin">登录</string>
+
     <string name="main_nav_home">首页</string>
     <string name="main_nav_grocery">生活物品</string>
     <string name="main_nav_order">订单</string>
     <string name="main_nav_account">账户</string>
 
     <string name="account">账户</string>
-    <string name="account_payment">支付/信用卡</string>
     <string name="account_address">地址管理</string>
-    <string name="account_language">选择语言</string>
     <string name="account_contact">联系我们</string>
+    <string name="account_credit">代金券</string>
+    <string name="account_favorite">收藏</string>
+    <string name="account_language">选择语言</string>
+    <string name="account_payment">支付/信用卡</string>
     <string name="account_setting">设置</string>
     <string name="account_setting_legal">法律信息</string>
 
@@ -22,9 +29,13 @@
 
     <string name="address_manage_title">地址管理</string>
 
+    <string name="credit_title">代金券</string>
+
+    <string name="favorite_title">收藏列表</string>
 
     <string name="language_select_title">选择语言</string>
     <string name="language_select_confirm">确认选择</string>
+    <string name="language_select_confirm_selection">确认更换语言?</string>
 
     <string name="contact_title">联系我们</string>
 

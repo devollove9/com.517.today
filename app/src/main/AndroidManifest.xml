@@ -50,6 +50,15 @@
         <activity
             android:name=".activity.ContactActivity">
         </activity>
+        <activity
+            android:name=".activity.CreditActivity">
+        </activity>
+        <activity
+            android:name=".activity.FavoriteActivity">
+        </activity>
+        <activity
+            android:name=".activity.SignInActivity">
+        </activity>
     </application>
 
 </manifest>

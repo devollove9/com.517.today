@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ContactActivity">
+    tools:context=".activity.FavoriteActivity">
 
     <fragment
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
     </fragment>
 
     <TextView
-        android:id="@+id/text_order"
+        android:id="@+id/favorite_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -25,7 +25,7 @@
         android:textSize="23sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:text="@string/contact_title"
+        android:text="@string/favorite_title"
         />
 
 </RelativeLayout>

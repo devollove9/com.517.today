@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.us517.today.activity.SignInActivity">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:id="@+id/title_bar_close"
+        android:layout_alignParentTop="true"
+        android:name="com.us517.today.ui.titleBar.TitleBarClose"
+        tools:layout="@layout/fragment_title_bar_close">
+    </fragment>
+
+    <TextView
+        android:id="@+id/text_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/signin"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="200dp"
+            >
+
+        </RelativeLayout>
+        <android.widget.Button
+            android:id="@+id/signIn_confirm"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:background="@drawable/button_outline_selector"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:text="@string/signin" />
+    </LinearLayout>
+
+
+</RelativeLayout>
