@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 
-import androidx.activity.OnBackPressedCallback;
-
-import com.us517.today.R;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -44,6 +40,7 @@ public class BaseActivity extends AppCompatActivity {
         super.finish();
         // overridePendingTransition(R.anim.anim_left_in, R.anim.anim_rignt_out);
     }
+
     /*
     @Override
     public void startActivityForResult(Intent intent, int requestCode, Bundle options) {

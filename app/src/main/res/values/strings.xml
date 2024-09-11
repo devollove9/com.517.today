@@ -24,7 +24,8 @@
     <string name="account_setting_legal">Legal</string>
 
     <string name="payment_manage_title">Payment</string>
-
+    <string name="payment_manage_credit_card">Credit Card</string>
+    <string name="payment_manage_add_new">New</string>
 
     <string name="address_manage_title">Address</string>
 
@@ -44,7 +45,12 @@
     <string name="language_select_english" translatable="false">English</string>
     <string name="language_select_chinese" translatable="false">简体中文</string>
 
-    <string name="setting_title">Setting</string>
+    <string name="setting_title">Settings</string>
+
+    <string name="profile_title">Profile</string>
+    <string name="profile_update">Update</string>
+    <string name="profile_nickname">Nickname</string>
+    <string name="profile_nickname_hint">Enter your name here</string>
     <string name="Legal_title">Legal</string>
 
     <!-- version check -->

@@ -41,14 +41,14 @@ public class LanguageSelectActivity extends BaseActivity implements View.OnClick
     public void onClick(View view) {
         //
         TodayApplication tApp = (TodayApplication) getApplication();
-        String curLang =  tApp.getLanguage();
+        String curLang = tApp.getLanguage();
         String sL = "en";
         if (languageSelectGroup.getCheckedRadioButtonId() == R.id.language_select_chinese) {
             sL = "zh";
         }
         final String seLang = sL;
 
-        if (!curLang.equals(seLang.toString()) ) {
+        if (!curLang.equals(seLang.toString())) {
             Dialog.showYesNoDialog(LanguageSelectActivity.this, 0, null, getString(R.string.language_select_confirm_selection), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

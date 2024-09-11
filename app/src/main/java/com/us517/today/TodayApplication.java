@@ -9,10 +9,13 @@ import android.content.res.Resources;
 import android.os.LocaleList;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
+import androidx.fragment.app.Fragment;
 
 import java.util.Locale;
 
@@ -38,6 +41,8 @@ public class TodayApplication extends Application {
     private final static String REGION_NAME_EN = "REGION_NAME_EN";
 
     // User
+    private String userNickname;
+    private final static String USER_NICKNAME = "USER_NICKNAME";
     // private AuthModel authModel;
     private boolean isSignedIn = false;
     private String token;
@@ -58,10 +63,10 @@ public class TodayApplication extends Application {
 
         // Detect if user has saved language. if yes set as saved language
         String savedL = sharedPreferences.getString(LANGUAGE_TEXT, LANGUAGE_ENGLISH);
-        Log.d(savedL,savedL);
         setLanguage(savedL);
 
-        this.regionId = sharedPreferences.getString(REGION, "");
+        userNickname = sharedPreferences.getString(USER_NICKNAME,"Account");
+        regionId = sharedPreferences.getString(REGION, "");
         regionName = sharedPreferences.getString(REGION_NAME, null);
         regionNameEn = sharedPreferences.getString(REGION_NAME_EN, null);
         //sharedPreferences.edit().putInt(LANGUAGE_TEXT, language).commit();
@@ -95,4 +100,14 @@ public class TodayApplication extends Application {
        // return AppCompatDelegate.getApplicationLocales().toString();
         return sharedPreferences.getString(LANGUAGE_TEXT, LANGUAGE_ENGLISH);
     }
+
+    public void setUserNickname(String nickname) {
+        userNickname = nickname;
+        sharedPreferencesEditor.putString(USER_NICKNAME, nickname).apply();
+    }
+
+    public String getUserNickname() {
+        return sharedPreferences.getString(USER_NICKNAME, userNickname);
+    }
+
 }

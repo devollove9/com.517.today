@@ -25,7 +25,8 @@
     <string name="account_setting_legal">法律信息</string>
 
     <string name="payment_manage_title">支付管理</string>
-
+    <string name="payment_manage_credit_card">信用卡</string>
+    <string name="payment_manage_add_new">添加</string>
 
     <string name="address_manage_title">地址管理</string>
 
@@ -41,8 +42,10 @@
 
 
     <string name="setting_title">设置</string>
-
-
+    <string name="profile_title">账号信息</string>
+    <string name="profile_update">确认修改</string>
+    <string name="profile_nickname">昵称</string>
+    <string name="profile_nickname_hint">请输入昵称</string>
     <string name="Legal_title">法律信息</string>
     <!-- version check -->
     <string name="download_newest_ver">请去应用商店下载最新版App</string>

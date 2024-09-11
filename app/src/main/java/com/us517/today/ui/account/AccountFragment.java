@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 import androidx.activity.result.ActivityResult;
@@ -21,6 +22,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.us517.today.R;
 import com.us517.today.TodayApplication;
 import com.us517.today.activity.AddressManageActivity;
@@ -29,6 +33,7 @@ import com.us517.today.activity.CreditActivity;
 import com.us517.today.activity.FavoriteActivity;
 import com.us517.today.activity.LanguageSelectActivity;
 import com.us517.today.activity.PaymentManageActivity;
+import com.us517.today.activity.ProfileActivity;
 import com.us517.today.activity.SettingActivity;
 
 import com.us517.today.activity.SignInActivity;
@@ -40,12 +45,13 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
 
     private FragmentAccountBinding binding;
     private FragmentRequestSignInBinding binding2;
-    ActivityResultLauncher launcher;
+    ActivityResultLauncher launcher, launcher2;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // AccountViewModel accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
         TodayApplication tApp = (TodayApplication) getActivity().getApplication();
+
         View root;
         if (!tApp.isSignedIn()) {
             NavController navController = Navigation.findNavController(this.getActivity(), R.id.nav_host_fragment_activity_main);
@@ -63,7 +69,23 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             binding2.requestSignIn.setOnClickListener(this);
         } else {
             binding = FragmentAccountBinding.inflate(inflater, container, false);
+            if (launcher2 == null) {
+                launcher2 = registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                            @Override
+                            public void onActivityResult(ActivityResult result) {
+                                if(result.getResultCode() == Activity.RESULT_OK) {
+                                    binding.accountNickname.setText(tApp.getUserNickname());
+                                }
+                            }
+                        });
+            }
+
             root = binding.getRoot();
+            Glide.with(this).load("https://s3.amazonaws.com/1.us-east-1.517.today/default_avatar.jpg").apply(RequestOptions.skipMemoryCacheOf(true))
+                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).into(binding.accountAvatar);
+            binding.accountNickname.setText(tApp.getUserNickname());
+            binding.accountAvatar.setOnClickListener(this);
             binding.accountAddress.setOnClickListener(this);
             binding.accountCredit.setOnClickListener(this);
             binding.accountFavorate.setOnClickListener(this);
@@ -72,8 +94,17 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             binding.accountSetting.setOnClickListener(this);
             binding.accountContact.setOnClickListener(this);
         }
+        /*
 
-
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if(result.getResultCode() == Activity.RESULT_OK) {
+                            navController.navigate(R.id.main_nav_account);
+                        }
+                    }
+                });*/
 
         // NavController navController = Navigation.findNavController(this.getActivity(), R.id.nav_host_fragment_activity_main);
         // navController.navigate(R.id.main_nav_requestSignIn);
@@ -88,6 +119,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+        binding2 = null;
+        launcher = null;
+        launcher2 = null;
     }
 
     @Override
@@ -111,10 +145,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             intent =  new Intent(this.getActivity(), FavoriteActivity.class);
         } else if (viewId == R.id.request_signIn) {
             intent =  new Intent(this.getActivity(), SignInActivity.class);
+        } else if (viewId == R.id.account_avatar) {
+            intent =  new Intent(this.getActivity(), ProfileActivity.class);
         }
         if (intent != null) {
             if (viewId == R.id.request_signIn) {
                 launcher.launch(intent);
+            } else if (viewId == R.id.account_avatar) {
+                launcher2.launch(intent);
             } else {
                 startActivity(intent);
             }

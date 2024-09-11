@@ -20,7 +20,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         TodayApplication tApp = (TodayApplication) getApplication();
-        tApp.setSignIn(!tApp.isSignedIn());
+        tApp.setSignIn(true);
         setResult(RESULT_OK);
         finish();
     }
