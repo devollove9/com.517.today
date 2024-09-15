@@ -1,10 +1,18 @@
 package com.us517.today.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
+import com.us517.today.R;
 import com.us517.today.adapter.CreditCardAdapter;
 import com.us517.today.databinding.ActivityPaymentManageBinding;
 import com.us517.today.model.CreditCard;
@@ -16,6 +24,9 @@ public class PaymentManageActivity extends BaseActivity implements View.OnClickL
     ActivityPaymentManageBinding binding;
     private CreditCardAdapter creditCardAdapter;
     private List<CreditCard> creditCardList;
+    ActivityResultLauncher launcher;
+    CreditCard newCard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +40,27 @@ public class PaymentManageActivity extends BaseActivity implements View.OnClickL
         binding.paymentManageCardList.setAdapter(creditCardAdapter);
         binding.paymentManageCreditCardNew.setOnClickListener(this);
 
-
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if(result.getResultCode() == Activity.RESULT_OK) {
+                            String cardExpire = result.getData().getStringExtra("cardExpire");
+                            String cardNumber = result.getData().getStringExtra("cardNumber");
+                            String cardType = result.getData().getStringExtra("cardType");
+                            String cardCvv= result.getData().getStringExtra("cardCvv");
+                            String cardZip= result.getData().getStringExtra("cardZip");
+                            CreditCard newCard = new CreditCard();
+                            newCard.setNumber(cardNumber);
+                            newCard.setType(cardType);
+                            newCard.setZip(cardZip);
+                            newCard.setExpire(cardExpire);
+                            newCard.setCvv(cardCvv);
+                            creditCardList.add(newCard);
+                            creditCardAdapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
     private void getCreditCard() {
         // creditCardList.clear();
@@ -71,8 +102,17 @@ public class PaymentManageActivity extends BaseActivity implements View.OnClickL
         Intent intent = null;
         if (view == binding.paymentManageCreditCardNew) {
             // New credit card page
-            getCreditCard();
-            creditCardAdapter.notifyDataSetChanged();
+            // getCreditCard();
+            // creditCardAdapter.notifyDataSetChanged();
+            intent = new Intent(this, NewCardActivity.class);
+        }
+        if (intent != null) {
+            if (view == binding.paymentManageCreditCardNew) {
+                launcher.launch(intent);
+            } else {
+                startActivity(intent);
+            }
+            // getActivity().overridePendingTransition(R.anim.anim_right_in, R.anim.anim_left_out);
         }
 
     }

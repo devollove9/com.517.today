@@ -28,6 +28,16 @@
     <string name="payment_manage_credit_card">信用卡</string>
     <string name="payment_manage_add_new">添加</string>
 
+    <string name="new_card_title">新增信用卡</string>
+    <string name="new_card_add">保存</string>
+    <string name="new_card_number_label">卡号</string>
+    <string name="new_card_expire_label">有效期</string>
+    <string name="new_card_cvv_label">CVV</string>
+    <string name="new_card_zip_label">邮编</string>
+    <string name="new_card_validation_card_number">请填写有效卡号</string>
+    <string name="new_card_validation_card_expire">日期无效</string>
+    <string name="new_card_validation_card_cvv">CVV无效</string>
+    <string name="new_card_validation_card_zip">邮编无效</string>
     <string name="address_manage_title">地址管理</string>
 
     <string name="credit_title">代金券</string>

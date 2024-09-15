@@ -27,6 +27,17 @@
     <string name="payment_manage_credit_card">Credit Card</string>
     <string name="payment_manage_add_new">New</string>
 
+    <string name="new_card_title">Add new card</string>
+    <string name="new_card_add">Save</string>
+    <string name="new_card_number_label">Card Number</string>
+    <string name="new_card_expire_label">Expire</string>
+    <string name="new_card_cvv_label">CVV</string>
+    <string name="new_card_zip_label">Zip Code</string>
+    <string name="new_card_validation_card_number">Invalid card number</string>
+    <string name="new_card_validation_card_expire">Invalid expire</string>
+    <string name="new_card_validation_card_cvv">Invalid cvv</string>
+    <string name="new_card_validation_card_zip">Invalid zip</string>
+
     <string name="address_manage_title">Address</string>
 
     <string name="contact_title">Contact</string>
