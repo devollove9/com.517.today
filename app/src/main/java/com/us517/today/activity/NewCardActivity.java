@@ -206,6 +206,7 @@ public class NewCardActivity extends BaseActivity implements View.OnClickListene
             binding.newCardNumberValidation.setText(errorMessage);
         } else {
             binding.newCardNumberValidation.setText("");
+            this.cardNumber = cardNumber;
             valid = true;
         }
         return valid;
@@ -323,9 +324,10 @@ public class NewCardActivity extends BaseActivity implements View.OnClickListene
         if (view == binding.newCardAdd) {
             if(validateCardInfo()) {
                 // This should be request to update credit card, using local variable here
+                String cNumber = cardNumber.substring(cardNumber.length() -4);
                 Intent intent = new Intent();
                 intent.putExtra("cardType", cardType);
-                intent.putExtra("cardNumber", cardNumber);
+                intent.putExtra("cardNumber", cNumber);
                 intent.putExtra("cardZip", cardZip);
                 intent.putExtra("cardExpire", cardExpire);
                 setResult(RESULT_OK, intent);

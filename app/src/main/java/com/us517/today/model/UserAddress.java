@@ -16,9 +16,10 @@ public class UserAddress implements Parcelable {
     private String phone;
     private String addressId;
     private Boolean disabled ;
-    private Integer type;
+    private String type;
     private String name;
     private String nameEn;
+    private String label;
 
     public String getName() {
         return name;
@@ -44,11 +45,11 @@ public class UserAddress implements Parcelable {
         this.disabled = disabled;
     }
 
-    public Integer getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -161,6 +162,13 @@ public class UserAddress implements Parcelable {
         this.phone = phone;
     }
 
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
     @Override
     public int describeContents() {
@@ -183,6 +191,7 @@ public class UserAddress implements Parcelable {
         dest.writeValue(this.type);
         dest.writeString(this.name);
         dest.writeString(this.nameEn);
+        dest.writeString(this.label);
     }
 
     public UserAddress() {
@@ -200,7 +209,7 @@ public class UserAddress implements Parcelable {
         this.phone = in.readString();
         this.addressId = in.readString();
         this.disabled = (Boolean) in.readValue(Boolean.class.getClassLoader());
-        this.type = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.type = in.readString();
         this.name = in.readString();
         this.nameEn = in.readString();
     }

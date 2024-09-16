@@ -24,9 +24,15 @@
     <string name="account_setting">设置</string>
     <string name="account_setting_legal">法律信息</string>
 
+    <string name="address_manage_title">地址管理</string>
+    <string name="address_manage_saved_address">已存地址</string>
+    <string name="address_manage_add_new">添加</string>
+    <string name="address_manage_address_list_empty">空</string>
+
     <string name="payment_manage_title">支付管理</string>
     <string name="payment_manage_credit_card">信用卡</string>
     <string name="payment_manage_add_new">添加</string>
+    <string name="payment_manage_credit_card_list_empty">空</string>
 
     <string name="new_card_title">新增信用卡</string>
     <string name="new_card_add">保存</string>
@@ -38,7 +44,7 @@
     <string name="new_card_validation_card_expire">日期无效</string>
     <string name="new_card_validation_card_cvv">CVV无效</string>
     <string name="new_card_validation_card_zip">邮编无效</string>
-    <string name="address_manage_title">地址管理</string>
+
 
     <string name="credit_title">代金券</string>
 

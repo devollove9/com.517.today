@@ -69,25 +69,21 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/payment_manage_cardList"
+            android:listSelector="@android:color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/swiperefresh"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/payment_manage_credit_card_list_empty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/payment_manage_credit_card_list_empty"
+            android:textColor="#525252"
+            android:visibility="gone"
+            />
 
-            <ListView
-                android:id="@+id/payment_manage_cardList"
-                android:listSelector="@android:color/transparent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
 
 

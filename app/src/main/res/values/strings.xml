@@ -23,9 +23,16 @@
     <string name="account_setting">Settings</string>
     <string name="account_setting_legal">Legal</string>
 
+    <string name="address_manage_title">Address</string>
+    <string name="address_manage_saved_address">Saved addresses</string>
+    <string name="address_manage_add_new">New</string>
+    <string name="address_manage_address_list_empty">Empty</string>
+
+
     <string name="payment_manage_title">Payment</string>
     <string name="payment_manage_credit_card">Credit Card</string>
     <string name="payment_manage_add_new">New</string>
+    <string name="payment_manage_credit_card_list_empty">Empty</string>
 
     <string name="new_card_title">Add new card</string>
     <string name="new_card_add">Save</string>
@@ -38,7 +45,6 @@
     <string name="new_card_validation_card_cvv">Invalid cvv</string>
     <string name="new_card_validation_card_zip">Invalid zip</string>
 
-    <string name="address_manage_title">Address</string>
 
     <string name="contact_title">Contact</string>
 

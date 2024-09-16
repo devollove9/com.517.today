@@ -3,8 +3,8 @@ package com.us517.today.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextWatcher;
 import android.view.View;
+import android.widget.TextView;
 
 
 import androidx.activity.result.ActivityResult;
@@ -37,6 +37,8 @@ public class PaymentManageActivity extends BaseActivity implements View.OnClickL
         // Currently add mock data;
         getCreditCard();
         creditCardAdapter = new CreditCardAdapter(creditCardList, this);
+        TextView eV = findViewById(R.id.payment_manage_credit_card_list_empty);
+        binding.paymentManageCardList.setEmptyView(eV);
         binding.paymentManageCardList.setAdapter(creditCardAdapter);
         binding.paymentManageCreditCardNew.setOnClickListener(this);
 
