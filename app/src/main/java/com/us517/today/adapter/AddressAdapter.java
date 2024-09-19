@@ -1,6 +1,7 @@
 package com.us517.today.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,10 +47,13 @@ public class AddressAdapter extends BaseAdapter {
     }
 
     public int getItemPosition(String id) {
-        for (int position=0; position<userAddressList.size(); position++)
-            if (userAddressList.get(position).getAddressId() == id)
+        for (int position=0; position<userAddressList.size(); position++) {
+            Log.d(userAddressList.get(position).getAddressId(), id);
+            if (userAddressList.get(position).getAddressId().equals(id)) {
                 return position;
-        return 0;
+            }
+        }
+        return -1;
     }
 
 
@@ -128,7 +132,9 @@ public class AddressAdapter extends BaseAdapter {
             viewHolder.textAddressLabel.setText(label);
             viewHolder.textAddressName.setText(name);
 
-            viewHolder.textAddressPhone.setText(userAddress.getPhone());
+            String phone = userAddress.getPhone();
+            if (!name.isEmpty()) phone = " " + phone;
+            viewHolder.textAddressPhone.setText(phone);
 
             // Street
             String st = userAddress.getStreet();

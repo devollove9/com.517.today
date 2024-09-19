@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.LocaleList;
@@ -16,6 +18,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.net.PlacesClient;
 
 import java.util.Locale;
 
@@ -50,9 +55,12 @@ public class TodayApplication extends Application {
     private final static String USER_ACCOUNT = "ACCOUNT";
     private final static String PASSWORD = "PASSWORD";
 
+    // Places Api
+    private static String googleApiKey = "";
+    private static PlacesClient placesClient;
+
     // System util
     private final static String SETTING = "SETTING";
-
 
     @Override
     public void onCreate() {
@@ -70,10 +78,31 @@ public class TodayApplication extends Application {
         regionName = sharedPreferences.getString(REGION_NAME, null);
         regionNameEn = sharedPreferences.getString(REGION_NAME_EN, null);
         //sharedPreferences.edit().putInt(LANGUAGE_TEXT, language).commit();
+        ApplicationInfo appInfo;
+        try {
+            appInfo = this.getPackageManager().getApplicationInfo(this.getPackageName(), PackageManager.GET_META_DATA);
+            googleApiKey = appInfo.metaData.getString("googleApiKey");
+
+        } catch (PackageManager.NameNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        if (!googleApiKey.isEmpty()) {
+            Places.initialize(getApplicationContext(), googleApiKey);
+            placesClient = Places.createClient(this);
+        }
+
+
 
     }
 
     private int time = 0;
+
+    public String getGoogleApiKey() {
+        return googleApiKey;
+    }
+
+    public PlacesClient getPlacesClient() { return placesClient;}
 
     public boolean isSignedIn() {
         return isSignedIn;

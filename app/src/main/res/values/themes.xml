@@ -27,10 +27,42 @@
         <item name="android:paddingStart">20dp</item>
         <item name="android:layout_marginTop">3dp</item>
     </style>
+
+    <style name="input_field_label">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:layout_marginStart">3dp</item>
+    </style>
+    <style name="input_field_line_basic">
+        <item name="android:layout_height">34dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:background">@drawable/selector_input_field</item>
+    </style>
+
     <style name="input_validation_basic">
         <item name="android:textColor">@color/red_validation</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_marginLeft">2dp</item>
         <item name="android:layout_marginTop">2dp</item>
+    </style>
+
+    <style name="label_secondary">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
     <style name="style_app_setting_layout_white" parent="style_app_setting_layout">
         <item name="android:background">@android:color/white</item>

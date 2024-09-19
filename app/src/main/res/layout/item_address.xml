@@ -25,7 +25,9 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,8 +40,7 @@
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
                 android:ellipsize="end"
-                android:lines="1"
-                android:text="Homestead Apartment"/>
+                android:lines="1" />
             <TextView
                 android:id="@+id/address_type"
                 android:layout_width="wrap_content"
@@ -60,17 +61,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                android:text="Devo li "/>
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/address_phone"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="2dp"
                 android:layout_height="20dp"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                android:text=" 5179747615">
+                android:textColor="@color/black">
             </TextView>
         </LinearLayout>
         <LinearLayout
@@ -82,10 +80,11 @@
             <TextView
                 android:id="@+id/address_full"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/black"
-                android:text="500 W Lake Lansing Rd"/>
+                android:lines="1"
+                android:ellipsize="end"
+                android:textColor="@color/black" />
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout

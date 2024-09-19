@@ -212,6 +212,7 @@ public class UserAddress implements Parcelable {
         this.type = in.readString();
         this.name = in.readString();
         this.nameEn = in.readString();
+        this.label = in.readString();
     }
 
     public static final Parcelable.Creator<UserAddress> CREATOR = new Creator<UserAddress>() {

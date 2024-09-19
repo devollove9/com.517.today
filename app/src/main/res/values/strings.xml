@@ -28,6 +28,37 @@
     <string name="address_manage_add_new">New</string>
     <string name="address_manage_address_list_empty">Empty</string>
 
+    <string name="new_address_title">New Address</string>
+
+    <string name="modify_address_title">Modify Address</string>
+    <string name="modify_address_contact_info">Contact Information(Required)</string>
+    <string name="modify_address_first_name">First Name</string>
+    <string name="modify_address_last_name">Last Name</string>
+    <string name="modify_address_phone">Phone Number</string>
+    <string name="modify_address_label">Address Label(Optional)</string>
+    <string name="modify_address_label_example">E.g. Home </string>
+    <string name="modify_address_detail">Address Detail(Required)</string>
+
+    <string name="modify_address_search_label">Search address</string>
+    <string name="modify_address_street_label">Street</string>
+    <string name="modify_address_room_label">Room</string>
+    <string name="modify_address_city_label">City</string>
+    <string name="modify_address_state_label">State</string>
+    <string name="modify_address_zip_label">Zip Code</string>
+
+    <string name="modify_address_search_hint">Search address</string>
+    <string name="modify_address_street_hint">Street</string>
+    <string name="modify_address_room_hint">Room</string>
+    <string name="modify_address_city_hint">City</string>
+    <string name="modify_address_state_hint">State</string>
+    <string name="modify_address_zip_hint">Zip Code</string>
+
+    <string name="modify_address_phone_validation">! Invalid Phone Number</string>
+    <string name="modify_address_street_validation">! Street Required</string>
+    <string name="modify_address_required_validation">! Required</string>
+
+    <string name="modify_address_delete">Delete</string>
+    <string name="modify_address_add">Save</string>
 
     <string name="payment_manage_title">Payment</string>
     <string name="payment_manage_credit_card">Credit Card</string>

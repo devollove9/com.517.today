@@ -29,6 +29,37 @@
     <string name="address_manage_add_new">添加</string>
     <string name="address_manage_address_list_empty">空</string>
 
+    <string name="new_address_title">新建地址</string>
+
+    <string name="modify_address_title">修改地址</string>
+    <string name="modify_address_search_hint">搜索地址</string>
+    <string name="modify_address_contact_info">联系信息(必填)</string>
+    <string name="modify_address_first_name">名</string>
+    <string name="modify_address_last_name">姓</string>
+    <string name="modify_address_phone">电话号码</string>
+    <string name="modify_address_label">地址简称(选填)</string>
+    <string name="modify_address_label_example">地址昵称</string>
+    <string name="modify_address_detail">地址信息(必填)</string>
+
+    <string name="modify_address_search_label">搜索地址</string>
+    <string name="modify_address_street_label">街道</string>
+    <string name="modify_address_room_label">房间号</string>
+    <string name="modify_address_city_label">城市</string>
+    <string name="modify_address_state_label">州</string>
+    <string name="modify_address_zip_label">邮编</string>
+
+    <string name="modify_address_street_hint">街道</string>
+    <string name="modify_address_room_hint">房间号</string>
+    <string name="modify_address_city_hint">城市</string>
+    <string name="modify_address_state_hint">州</string>
+    <string name="modify_address_zip_hint">邮编</string>
+    <string name="modify_address_delete">删除</string>
+    <string name="modify_address_add">保存</string>
+
+    <string name="modify_address_phone_validation">! 请输入有效号码</string>
+    <string name="modify_address_street_validation">! 请填写街道</string>
+    <string name="modify_address_required_validation">! 必填</string>
+
     <string name="payment_manage_title">支付管理</string>
     <string name="payment_manage_credit_card">信用卡</string>
     <string name="payment_manage_add_new">添加</string>

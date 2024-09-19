@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
+
     <application
         android:name="com.us517.today.TodayApplication"
         android:allowBackup="true"
@@ -19,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Comus517today"
         tools:targetApi="31">
+        <meta-data android:name = "googleApiKey" android:value = ""/>
         <activity
             android:name=".InitialActivity"
             android:exported="true">
@@ -64,6 +67,9 @@
         </activity>
         <activity
             android:name=".activity.NewCardActivity">
+        </activity>
+        <activity
+            android:name=".activity.ModifyAddressActivity">
         </activity>
     </application>
 
